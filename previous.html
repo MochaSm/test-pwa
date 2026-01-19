@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    <title>history</title>
+</head>
+<body>
+    <div class="above">EverNight <i class="fa-regular fa-moon"></i></div>
+
+    <main id="main-previous">
+     <div id="nav-desktop" class="nav">
+                <a href="dash.html" >Home</a>
+                <a href="todo.html">Todo</a>
+                <a href="previous.html" id="selected">Previous Assignments</a>
+                <a href="credits.html">Credits</a>
+            </div>
+            <div id="nav-mobile" class="nav">
+
+                <a href="#"><i class="fa-regular fa-house"></i> <span>Home</span></a>
+
+                <a href="#"><i class="fa-solid fa-book"></i> <span>Todo</span></a>
+
+                <a href="#"><i class="fa-regular fa-clock"></i> <span>Previous</span></a>
+                <a href="#"><i class="fa-solid fa-scroll"></i> <span>Credits</span></a>
+
+        </div>
+        <div id="nav-mobile" class="nav">
+
+            <a href="#"><i class="fa-regular fa-house"></i> <span>Home</span></a>
+
+            <a href="#"><i class="fa-solid fa-book"></i> <span>Todo</span></a>
+
+            <a href="#"><i class="fa-regular fa-clock"></i> <span>Previous</span></a>
+            <a href="#"><i class="fa-solid fa-scroll"></i> <span>Credits</span></a>
+
+        </div>
+      <div class="logs-boxed">
+            <div class="boxed">
+                <h2>Your Study Sessions</h2>
+                <div class="category">
+                    <span class="subject-head">Subject</span>
+                    <span class="time-spent-head">Time Spent in minutes</span>
+                    <span class="time-of-day-head">Time of Day</span>
+                    <span class="mood-head">Mood</span>
+                    <span class="feedback-head">effective?</span>
+                </div>
+            </div>
+            {% for a in study_sessions | reverse %}
+            <div class="session-containers">
+                <span class="session-subject">{{ a.subject }}</span>
+                <span class="session-time-spent">{{ a.time_spent }}</span>
+                <span class="session-time-of-day">{{ a.time_of_day }}</span>
+                <span class="session-mood">{{ a.mood }}</span>
+                <span class="session-feedback">{{ a.feedback }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+  </main>
+</body>
+</html>
